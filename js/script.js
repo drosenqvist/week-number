@@ -2,13 +2,12 @@
 function calculateWeek () {
     const date = new Date(),
           month = date.getMonth(),
-          day = date.getDate()
-
-    const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+          day = date.getDate(),
+          daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
     let output = day
 
-    for (i = 0; i < month; i++) {
+    for (let i = 0; i < month; i++) {
         output += daysInMonth[i]
     }
     
