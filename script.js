@@ -1,7 +1,7 @@
 // Setup the neccessary variables and calculate which week it is.
-function calculateWeek () {
+const calculateWeek = () => {
   const date = new Date(),
-        year = 2020,
+        year = date.getFullYear(),
         month = date.getMonth(),
         day = date.getDate(),
         daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -19,15 +19,8 @@ function calculateWeek () {
       output += daysInMonth[i];
   }
     
-  // Divides the #days to get the #week
-  return(Math.floor(output / 7 + 1));
-}
-
-// Outputs the week number to the HTML h1 element
-function outputWeek () {
   const outputField = document.querySelector('.weekOutput');
-
-  outputField.textContent = calculateWeek();
+        outputField.textContent = (Math.floor(output / 7 + 1))
 }
 
-outputWeek();
+calculateWeek();
